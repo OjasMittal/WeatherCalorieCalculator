@@ -20,7 +20,7 @@ def send_email(name,email,weight,height,age,temperature,type,city,country):
                           },
                           "content": {
                             "title": f"Your Calorie intake for today",
-                            "body": f"Hi {name}!\n Welcome to {city},{country}!\n"
+                            "body": f"Hi {name} !\n Welcome to {city},{country}!\n\n"
                                     f"The current temperature is {temperature}°{CorF} \n So your today's Calorie intake should be: {calorie.calculate()} Calories. "
                                     f"\n\nDo not reply back to this email. "
                                     f"\n\nRegards,\nTeam - Weather Calorie Calculator",
