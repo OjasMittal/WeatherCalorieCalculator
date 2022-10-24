@@ -11,10 +11,10 @@ class Calorie:
 
     def calculate(self):
         if self.type==1:
-            result = 10 * self.weight + 6.5 * self.height + 5 - self.temperature * 10
+            result = int(10 * self.weight + 6.5 * self.height + 5 - self.temperature * 10)
             return result
         elif self.type==2:
-            result = 10 * self.weight + 6.5 * self.height + 5 - (self.temperature-32) * 50/9
+            result = int(10 * self.weight + 6.5 * self.height + 5 - (self.temperature-32) * 50/9)
             return result
 
 
