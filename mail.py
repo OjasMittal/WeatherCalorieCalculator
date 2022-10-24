@@ -2,7 +2,6 @@ from trycourier import Courier
 import os
 from dotenv import load_dotenv
 load_dotenv()
-
 client = Courier(auth_token=os.getenv("AUTH_TOKEN"))
 from calorie import Calorie
 def send_email(name,email,weight,height,age,temperature,type,city,country):
@@ -22,9 +21,9 @@ def send_email(name,email,weight,height,age,temperature,type,city,country):
                           "content": {
                             "title": f"Your Calorie intake for today",
                             "body": f"Hi {name}!\n Welcome to {city},{country}!\n"
-                                    f"The current temperature is {temperature}°{CorF} \n So your today's Calorie Intake should be: {calorie.calculate()} Calories "
-                                    f"\nDo not reply back to this email. "
-                                    f"\nRegards\nTeam-Weather Calorie Calculator",
+                                    f"The current temperature is {temperature}°{CorF} \n So your today's Calorie intake should be: {calorie.calculate()} Calories. "
+                                    f"\n\nDo not reply back to this email. "
+                                    f"\n\nRegards,\nTeam - Weather Calorie Calculator",
                           },
                           "data": {"note": f"\nDo not reply back to this email. \n\n {calorie.calculate()}\nRegards,\nCalorie Calculator",
                           },
