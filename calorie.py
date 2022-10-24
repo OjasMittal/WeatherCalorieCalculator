@@ -7,12 +7,13 @@ class Calorie:
         self.height = height
         self.age = age
         self.temperature = temperature
+        self.type=type
 
     def calculate(self):
-        if type==1:
+        if self.type==1:
             result = 10 * self.weight + 6.5 * self.height + 5 - self.temperature * 10
             return result
-        elif type==2:
+        elif self.type==2:
             result = 10 * self.weight + 6.5 * self.height + 5 - (self.temperature-32) * 50/9
             return result
 

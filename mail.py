@@ -6,6 +6,10 @@ load_dotenv()
 client = Courier(auth_token=os.getenv("AUTH_TOKEN"))
 from calorie import Calorie
 def send_email(name,email,weight,height,age,temperature,type,city,country):
+                if type==1:
+                    CorF="C"
+                else:
+                    CorF="F"
                 city=city.title()
                 country=country.title()
                 calorie=Calorie(weight=weight,height=height,age=age,temperature=temperature,type=type)
@@ -18,7 +22,7 @@ def send_email(name,email,weight,height,age,temperature,type,city,country):
                           "content": {
                             "title": f"Your Calorie intake for today",
                             "body": f"Hi {name}!\n Welcome to {city},{country}!\n"
-                                    f"The current temperature is {temperature}°C \n So your today's Calorie Intake should be: {calorie.calculate()} Calories "
+                                    f"The current temperature is {temperature}°{CorF} \n So your today's Calorie Intake should be: {calorie.calculate()} Calories "
                                     f"\nDo not reply back to this email. "
                                     f"\nRegards\nTeam-Weather Calorie Calculator",
                           },
