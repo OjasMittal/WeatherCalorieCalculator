@@ -43,7 +43,13 @@ class Temperature:
         """Cleans the output of _scrape"""
 
         scraped_content = self._scrape()
-        return float(scraped_content['temp'].replace("\xa0°C", "").strip())
+        try:
+            val=float(scraped_content['temp'].replace("\xa0°C", "").strip())
+            choice=1
+        except:
+            val=float(scraped_content['temp'].replace("\xa0°F", "").strip())
+            choice=2
+        return val,choice
 
 if __name__ == "__main__":
     temperature = Temperature(country="india", city="mumbai")

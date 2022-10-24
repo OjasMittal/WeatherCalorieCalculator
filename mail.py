@@ -5,10 +5,10 @@ load_dotenv()
 
 client = Courier(auth_token=os.getenv("AUTH_TOKEN"))
 from calorie import Calorie
-def send_email(name,email,weight,height,age,temperature,city,country):
+def send_email(name,email,weight,height,age,temperature,type,city,country):
                 city=city.title()
                 country=country.title()
-                calorie=Calorie(weight=weight,height=height,age=age,temperature=temperature)
+                calorie=Calorie(weight=weight,height=height,age=age,temperature=temperature,type=type)
                 print(calorie.calculate())
                 client.send_message(
                         message={

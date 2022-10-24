@@ -99,8 +99,8 @@ if gauth == 2:
         height = int(height)
         weight = int(weight)
         age = int(age)
-        temp = Temperature(country=country, city=city).get()
-        success = mail.send_email(name, emaill, weight,height,age,temp,city,country)
+        temp,type = Temperature(country=country, city=city).get()
+        success = mail.send_email(name, emaill, weight,height,age,temp,type,city,country)
         if success:
             st.write("Calorier required Mailed Successfully!")
 else:
@@ -139,8 +139,8 @@ else:
                     height = int(height)
                     weight = int(weight)
                     age = int(age)
-                    temp = Temperature(country=country, city=city).get()
-                    success = mail.send_email(name, emaill, weight,height,age,temp,city,country)
+                    temp,type = Temperature(country=country, city=city).get()
+                    success = mail.send_email(name, emaill, weight,height,age,temp,type,city,country)
                     if success:
                         st.write("Calories Required Mailed Successfully!")
                         st.balloons()
