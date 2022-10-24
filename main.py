@@ -99,6 +99,8 @@ if gauth == 2:
         height = int(height)
         weight = int(weight)
         age = int(age)
+        country=country.lower()
+        city=city.lower()
         temp = Temperature(country=country, city=city).get()
         if temp<=50.0:
             type=1
@@ -107,6 +109,7 @@ if gauth == 2:
         success = mail.send_email(name, emaill, weight,height,age,temp,type,city,country)
         if success:
             st.write("Calorier required Mailed Successfully!")
+            st.balloons()
 else:
     if choice == "SignUp":
         handle = st.sidebar.text_input("Please enter your nickname", value="CoolPanda")
@@ -142,6 +145,8 @@ else:
                     height = int(height)
                     weight = int(weight)
                     age = int(age)
+                    country = country.lower()
+                    city = city.lower()
                     temp= Temperature(country=country, city=city).get()
                     print(temp)
                     if temp <= 50.0:
