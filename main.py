@@ -123,7 +123,6 @@ else:
 
             except:
                 st.sidebar.info("This account already exists !")
-
     if choice == "Login":
         login = st.sidebar.checkbox('Login', key=2)
         if login:
