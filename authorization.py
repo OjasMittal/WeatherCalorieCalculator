@@ -6,7 +6,7 @@ import os
 
 client_id=os.getenv("CLIENT_ID")
 CLIENT_SECRET=os.getenv("CLIENT_SECRET")
-redirect_uri ="http://localhost:8501"
+redirect_uri =os.getenv("REDIRECT")
 client_secret = CLIENT_SECRET
 
 
