@@ -5,10 +5,8 @@ from httpx_oauth.clients.google import GoogleOAuth2
 import os
 
 client_id=os.getenv("CLIENT_ID")
-CLIENT_SECRET=os.getenv("CLIENT_SECRET")
+client_secret=os.getenv("CLIENT_SECRET")
 redirect_uri =os.getenv("REDIRECT")
-client_secret = CLIENT_SECRET
-
 
 async def write_authorization_url(client,
                                   redirect_uri):
