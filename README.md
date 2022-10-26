@@ -5,10 +5,11 @@ It authenticates users using Google Login/Firebase and asks users about their ag
 ## How I built it
 I built it using Python-Streamlit,Lottie animations, Firebase, Google OAuth, selectorlib data Extractor, and Courier platform.
 
-##Open for Contributions
+## Open for Contributions
 This is an open source project so feel free to contribute!!
 
 Follow these simple steps:
+
 1. Fork This Repository
 	
 2.  Using Git on your local machine, clone your fork using the URL you just copied: git clone URL_OF_FORK
