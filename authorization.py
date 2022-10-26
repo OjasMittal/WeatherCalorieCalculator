@@ -4,10 +4,11 @@ from SessionState import get
 from httpx_oauth.clients.google import GoogleOAuth2
 import os
 
-client_id=os.getenv("CLIENT_ID")
-client_secret=os.getenv("CLIENT_SECRET")
+CLIENT_ID=os.getenv("CLIENT_ID")
+CLIENT_SECRET=os.getenv("CLIENT_SECRET")
 redirect_uri =os.getenv("REDIRECT")
-
+client_id = CLIENT_ID
+client_secret = CLIENT_SECRET
 async def write_authorization_url(client,
                                   redirect_uri):
     authorization_url = await client.get_authorization_url(
