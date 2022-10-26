@@ -9,24 +9,24 @@ I built it using Python-Streamlit,Lottie animations, Firebase, Google OAuth, sel
 This is an open source project so feel free to contribute!!
 
 Follow these simple steps:
-        1. Fork This Repository
+1. Fork This Repository
 	
-	2.  Using Git on your local machine, clone your fork using the URL you just copied: git clone URL_OF_FORK
+2.  Using Git on your local machine, clone your fork using the URL you just copied: git clone URL_OF_FORK
 	
-	3.  Navigate to Repo enter cd NAME_OF_REPOSITORY
+3.  Navigate to Repo enter cd NAME_OF_REPOSITORY
 	
-	4.  git remote add upstream URL_OF_PROJECT
+4.  git remote add upstream URL_OF_PROJECT
 	
-	5.  git remote -v
+5.  git remote -v
 	
-	6.  git pull upstream master
+6.  git pull upstream master
 	
-	7.  git checkout -b BRANCH_NAME
+7.  git checkout -b BRANCH_NAME
 	
-	8.  Make Changes
+8.  Make Changes
 	
-	9.  git add .
+9.  git add .
 	
-       10.  git commit -m "commit message"
+10.  git commit -m "commit message"
        
-       11.  git push -u origin BRANCH_NAME
+11.  git push -u origin BRANCH_NAME
