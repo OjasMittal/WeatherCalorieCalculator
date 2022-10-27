@@ -1,3 +1,4 @@
+import os
 import requests
 import streamlit as st
 from pyrebase import initialize_app
@@ -19,13 +20,13 @@ footer{visibility:hidden;}
 st.markdown(hide_menu_style,unsafe_allow_html=True)
 
 firebaseConfig = {
-    'apiKey': "AIzaSyBLC8Y5AHHIOCxBhODj2EoHarv-wpBUHE0",
+    'apiKey': os.getenv("API_KEY"),
     'authDomain': "calorie2calculator.firebaseapp.com",
     'projectId': "calorie2calculator",
     'databaseURL': "https://calorie2calculator-default-rtdb.asia-southeast1.firebasedatabase.app",
     'storageBucket': "calorie2calculator.appspot.com",
     'messagingSenderId': "855828674556",
-    'appId': "1:855828674556:web:c32b7bb9e7629d908da479",
+    'appId': os.getenv("APP_ID"),
     'measurementId': "G-FH0ESHZF8R"
 }
 
