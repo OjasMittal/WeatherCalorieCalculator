@@ -1,5 +1,5 @@
 # WeatherCalorieCalculator
-[!ss](https://github.com/OjasMittal/WeatherCalorieCalculator/blob/7033566bf7ebb27ec96e4f2a3e73f7de6fbc6eb2/web_pic.png)
+![ss](https://github.com/OjasMittal/WeatherCalorieCalculator/blob/7033566bf7ebb27ec96e4f2a3e73f7de6fbc6eb2/web_pic.png)
 ## What it does
 It authenticates users using Google Login/Firebase and asks users about their age, height, weight, country, and city. It then scrapes the temperature of that city and calculates the Calorie intake of the person based on the person's BMI and the temperature of the city the user resides in. 
 
