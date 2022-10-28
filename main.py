@@ -118,8 +118,8 @@ else:
         if submit:
             try:
                 user = auth.create_user_with_email_and_password(email, password)
-                st.sidebar.info("Your account is created successfully!")
-                st.sidebar.info("Click on Login to continue")
+                st.sidebar.write("Your account has been created successfully!")
+                st.sidebar.write("Click on Login to continue")
                 st.balloons()
                 user = auth.sign_in_with_email_and_password(email, password)
                 db.child(user['localId']).child("Handle").set(handle)
