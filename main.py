@@ -108,7 +108,7 @@ if gauth == 2:
             type=1
         else:
             type=2
-        success = mail.send_email(name, emaill, weight,height,age,temp,type,city,country)
+        success = mail.send_email(name, emaill,gender,weight,height,age,temp,type,city,country)
         if success:
             st.write("Calorier required Mailed Successfully!")
             st.balloons()
@@ -159,7 +159,7 @@ else:
                         type = 1
                     else:
                         type = 2
-                    success = mail.send_email(name, emaill, weight,height,age,temp,type,city,country)
+                    success = mail.send_email(name, emaill,gender, weight,height,age,temp,type,city,country)
                     if success:
                         st.write("Calories Required Mailed Successfully!")
                         st.balloons()
