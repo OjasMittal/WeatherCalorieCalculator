@@ -89,11 +89,11 @@ if gauth == 2:
             st_lottie(lottie_anime_json, key="hello")
     name = st.text_input("Enter your name")
     emaill = st.text_input("Enter your email")
-    height= st.text_input("Enter your height(cms.)")
-    weight=st.text_input("Enter your weight(kgs.)")
+    height= st.text_input("Enter your height (cms.)")
+    weight=st.text_input("Enter your weight (kgs.)")
     age=st.text_input("Enter your age")
-    country=st.text_input("Enter your country")
-    city=st.text_input("Enter your city")
+    country=st.text_input("Enter your country (in lower case)")
+    city=st.text_input("Enter your city (in lower case)")
     result = st.button("Get Calories Required")
 
     if result:
@@ -134,13 +134,16 @@ else:
                 user = auth.sign_in_with_email_and_password(email, password)
                 flag = 0
                 st.sidebar.info("You have Logged in Successfully!")
+             except:
+                st.sidebar.info("Enter a valid email/password !")
+             try:
                 name = st.text_input("Enter your name")
                 emaill = st.text_input("Enter your email")
-                height = st.text_input("Enter your height(cms.)")
-                weight = st.text_input("Enter your weight(kgs.)")
+                height = st.text_input("Enter your height (cms.)")
+                weight = st.text_input("Enter your weight (kgs.)")
                 age = st.text_input("Enter your age")
-                country = st.text_input("Enter your country")
-                city = st.text_input("Enter your city")
+                country = st.text_input("Enter your country (in lower case)")
+                city = st.text_input("Enter your city (in lower case)")
                 result = st.button("Get Calories Required")
                 if result:
                     height = int(height)
@@ -158,6 +161,7 @@ else:
                     if success:
                         st.write("Calories Required Mailed Successfully!")
                         st.balloons()
-
              except:
-                st.sidebar.info("Enter a valid email/password !")
+                 st.error("Fill all columns or enter a valid country/city")
+
+
