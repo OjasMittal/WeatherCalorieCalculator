@@ -60,8 +60,7 @@ st_lottie(lottie_anime_json, key="calorie")
 st.sidebar.markdown("<h1 style='text-align: center; color: #FFFFFF;'>WELCOME !</h1>",
 unsafe_allow_html = True)
 flag=1
-if flag ==1:
-    st.info("Login through login option in the left drop down menu to use this service")
+login=0
 gauth = authorization.authorize()
 if gauth != 2:
     st.sidebar.write("OR")
@@ -135,35 +134,39 @@ else:
                 user = auth.sign_in_with_email_and_password(email, password)
                 flag = 0
                 st.sidebar.info("You have Logged in Successfully!")
+                try:
+                    name = st.text_input("Enter your name")
+                    emaill = st.text_input("Enter your email")
+                    gender = st.radio('Gender', ['Male', 'Female'])
+                    height = st.slider("Height (cms.)", 100, 250, 170)
+                    weight = st.slider("Weight (kgs.)", 0, 150, 70)
+                    age = st.slider("Age", 0, 100, 40)
+                    country = st.text_input("Enter your country (in lower case)")
+                    city = st.text_input("Enter your city (in lower case)")
+                    result = st.button("Get Calories Required")
+                    if result:
+                        height = int(height)
+                        weight = int(weight)
+                        age = int(age)
+                        country = country.lower()
+                        city = city.lower()
+                        temp = Temperature(country=country, city=city).get()
+                        print(temp)
+                        if temp <= 50.0:
+                            type = 1
+                        else:
+                            type = 2
+                        success = mail.send_email(name, emaill, gender, weight, height, age, temp, type, city, country)
+                        if success:
+                            st.write("Calories Required Mailed Successfully!")
+                            st.balloons()
+                except:
+                    st.error("Fill all columns or enter a valid country/city")
              except:
                 st.sidebar.info("Enter a valid email/password !")
-             try:
-                name = st.text_input("Enter your name")
-                emaill = st.text_input("Enter your email")
-                gender = st.radio('Gender', ['Male', 'Female'])
-                height = st.slider("Height (cms.)", 100, 250, 170)
-                weight = st.slider("Weight (kgs.)", 0, 150, 70)
-                age = st.slider("Age", 0, 100, 40)
-                country = st.text_input("Enter your country (in lower case)")
-                city = st.text_input("Enter your city (in lower case)")
-                result = st.button("Get Calories Required")
-                if result:
-                    height = int(height)
-                    weight = int(weight)
-                    age = int(age)
-                    country = country.lower()
-                    city = city.lower()
-                    temp= Temperature(country=country, city=city).get()
-                    print(temp)
-                    if temp <= 50.0:
-                        type = 1
-                    else:
-                        type = 2
-                    success = mail.send_email(name, emaill,gender, weight,height,age,temp,type,city,country)
-                    if success:
-                        st.write("Calories Required Mailed Successfully!")
-                        st.balloons()
-             except:
-                 st.error("Fill all columns or enter a valid country/city")
+                flag=1
 
+if not login or not gauth==2:
+    if flag!=0:
+        st.info("SignUp/Login through the left drop down menu to use this service")
 
